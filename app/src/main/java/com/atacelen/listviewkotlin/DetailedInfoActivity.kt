@@ -11,12 +11,18 @@ class DetailedInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detailed_info)
 
+        //Receives the intent sent from the other Activity (similar to getIntent() in Java)
         val intent = intent
+
+        //Receives the information put into the intent
         val foodName = intent.getStringExtra("foodName")
         val foodCalories = intent.getIntExtra("foodCalories", 0)
 
+        //Sets the text/image for the TextView/ImageView
         foodNameText.text = foodName
         foodCaloriesText.text = foodCalories.toString()
+
+        //See "Singleton.kt" for more details
         /*
         val singleton = Singleton.Selected
         val selectedImage = singleton.selectedImage
